@@ -6,7 +6,10 @@ echo Установка зависимостей
 pip install -r req.txt
 
 echo Сборка
-%appdata%\Python\Python311\Scripts\pyinstaller.exe -F .\main_gui.py -i icon.ico --collect-all grapheme
+pyinstaller.exe -F .\main_gui.py -i icon.ico --collect-all grapheme
+if  errorlevel 1 %appdata%\Python\Python311\Scripts\pyinstaller.exe -F .\main_gui.py -i icon.ico --collect-all grapheme
+if  errorlevel 1 %localappdata%\Programs\Python\Python311\Scripts\pyinstaller.exe -F .\main_gui.py -i icon.ico --collect-all grapheme
+if  errorlevel 1 goto ERROR
 
 cls
 echo Сборка завершена!
@@ -19,5 +22,12 @@ echo Установите Goolgle Chrome, если он не устаовлен
 echo Скачать: https://chrome.google.com/
 echo.
 echo Файл сохранён в папке "dist".
+goto EOF
+
+:ERROR
+echo 
+
+:EOF
 echo Нажмите любую кнопку для выхода.
 pause > nul
+
