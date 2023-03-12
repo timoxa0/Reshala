@@ -25,7 +25,8 @@ echo Файл сохранён в папке "dist".
 goto EOF
 
 :ERROR
-echo 
+echo Ошибка сборки
+goto EOF
 
 :EOF
 echo Нажмите любую кнопку для выхода.
