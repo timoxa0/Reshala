@@ -1,21 +1,23 @@
 @echo off
 
-echo Installing all dependencies
+chcp 65001
+
+echo Установка зависимостей
 pip install -r req.txt
 
-echo Building project
+echo Сборка
 %appdata%\Python\Python311\Scripts\pyinstaller.exe -F .\main_gui.py -i icon.ico --collect-all grapheme
 
 cls
-echo Build finished!
+echo Сборка завершена!
 echo.
-echo Your OBT login:    learnUser
-echo Your OBT password: KoijkfHJEnm49
-echo Your OBT IP:       94.103.94.52
+echo Логин ОБТ:  learnUser
+echo Пароль ОБТ: KoijkfHJEnm49
+echo IP ОБТ:     94.103.94.52
 echo.
-echo Please install Google Chrome on your PC if one not installed
-echo Download link: https://chrome.google.com/
+echo Установите Goolgle Chrome, если он не устаовлен
+echo Скачать: https://chrome.google.com/
 echo.
-echo File saved in "dist" directory.
-echo Press any key to exit
+echo Файл сохранён в папке "dist".
+echo Нажмите любую кнопку для выхода.
 pause > nul
